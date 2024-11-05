@@ -50,7 +50,7 @@ pipeline TreesPipeline {
     // Such constraints are implicitly connected via a logical AND relation.
     // Note that the constraints need to be applicable to the base-type of the value type - indicated by the identifier after the keyword oftype:
 
-    valuetype Stadtteil_Constraint_ON oftype text {
+    valuetype Stadtteil_Validation oftype text {
     constraints: [
         Stadtteil_Constraint,
     ];
@@ -60,7 +60,7 @@ pipeline TreesPipeline {
         allowlist: ["Vogelsang Bols-Siedlung" ,"Vogelsang" ];
     }
 
-    valuetype Id_Constraint_ON oftype text {
+    valuetype Id_Validation oftype text {
     constraints: [
         Id_Constraint,
     ];}
@@ -74,16 +74,16 @@ pipeline TreesPipeline {
 
   // 6. As a next step, we interpret the sheet as a table by adding structure.
   // We define a value type per column that specifies the data type of the column.
-  // Rows that include values that are not valid according to the their value types are dropped automatically.
+  // Rows values that are not valid according to the their value types are dropped automatically.
 
     block TreesTableInterpreter oftype TableInterpreter {
         header: true;
         columns: [
             "lfd_nr" oftype integer,
-            "stadtteil" oftype Stadtteil_Constraint_ON,
+            "stadtteil" oftype Stadtteil_Validation,
             "standort" oftype text,
             "baumart_botanisch" oftype text,
-            "id" oftype Id_Constraint_ON,
+            "id" oftype Id_Validation,
             "baumfamilie" oftype text,
         ];
     }
