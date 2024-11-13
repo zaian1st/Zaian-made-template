@@ -35,7 +35,7 @@ With the growing focus on mental health, this project will examine whether there
 These indicators will be analyzed alongside marriage rates to identify any potential correlations.
 
 ## Data Preprocessing Requirements (Work Packages)
-- **Some links are Auto generated:** I will use beautifulsoup to download the data in my bython script
+- **Some links are Auto generated:** ~~I will be use beautifulsoup to download the data in my bython script~~ I found a fixed link of pdf that has the data then the idea now is to find a library that work with pdf texts like pdfplumber
 - **Restrict Age Group:** Since this project focuses on marriage, the data should be filtered to include individuals aged 18 and older.
 - **Combine Data Sources:** The mental health and suicidality data will be combined with marriage rates data by state and year for comparison.
 Note since mental health and suicidality data is one table per one year so the scope part is to see the states taht got effected .
