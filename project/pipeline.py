@@ -36,25 +36,29 @@ with pdfplumber.open(BytesIO(response.content)) as pdf:
     page = pdf.pages[0]  # Get the first (and only) page of the PDF
     text = page.extract_text()  # Extract text from the page
     
-    # Define regex to find state names and marriage rates
+    # This is kinda like regex from ex2.jv to show how the data look in the pdf  
+    # To find state names and Marriage rates
     pattern = r"^([A-Za-z\s]+)\s+([\d.]+)\s+([\d.]+)"
     for line in text.split("\n"):
         match = re.match(pattern, line)
         if match:
+    # Since the pdf is extracting text I will assign float to  Marriage rates  
             state = match.group(1).strip()
             rate_2022 = float(match.group(2))
             rate_2021 = float(match.group(3))
             data.append([state, rate_2022, rate_2021])
 
 # Convert the data to a DataFrame for easy handling
+# Also I renamed the header names to make sure the data wont misunderstood
 df_pdf = pd.DataFrame(data, columns=[
     "State", 
     "Marriage rates per 1,000 in 2022", 
     "Marriage rates per 1,000 in 2021"
 ])
 
-# Step 2: Load Mental Health Data from Excel
+# Step 2: Load Mental Health Data and Suicide from Excel
 # Each sheet requires specific rows to skip at the top
+# These will be the sheets I am intersted in 
 sheet_info = {
     "Table 31": 5,
     "Table 32": 5,
@@ -79,6 +83,7 @@ columns_to_drop = [
 ]
 
 # Mapping of sheet names to categories (used to rename columns later)
+# This part is important as the data when it merged will have the same header name we need to prevent this 
 constraint = {
     "Table 31": "Any Mental Illness",
     "Table 32": "Serious Mental Illness",
@@ -113,10 +118,10 @@ for sheet, skip_rows in sheet_info.items():
         "26+\nEstimate": f"{category_name} 26+ (%)"
     })
     
-    # Multiply percentage columns by 100 for readability
+    # Multiply percentage columns by 100 for readability as we want it as "(%)"
     for col in df.columns:
         if "(%)" in col:
-            df[col] = pd.to_numeric(df[col], errors="coerce") * 100  # Multiply by 100
+            df[col] = pd.to_numeric(df[col], errors="coerce") * 100  
     
     # Save cleaned data for the current sheet
     dfs[sheet] = df
@@ -136,10 +141,13 @@ merged_df = merged_df.dropna()
 
 # Step 4: Merge Marriage Rates Data with Mental Health Data
 # Keep only states present in the marriage rate data
+# https://www.ionos.at/digitalguide/websites/web-entwicklung/python-pandas-dataframe-isin/
+# reference_states, returning only rows with a match. (True or False)
 reference_states = set(df_pdf["State"])
 merged_df = merged_df[merged_df["State"].isin(reference_states)]
 
 # Merge marriage rates with mental health data on the "State" column
+# how="inner" argument specifies an inner join, which means only states present in both df_pdf and merged_df
 final_merged_df = pd.merge(df_pdf, merged_df, on="State", how="inner")
 
 # Step 5: Save the Final Data to SQLite Database
@@ -147,3 +155,6 @@ final_merged_df = pd.merge(df_pdf, merged_df, on="State", how="inner")
 conn = sqlite3.connect(r'data/merged_mental_marriage_data.sqlite')
 final_merged_df.to_sql('mental_Marriage_Data', conn, if_exists='replace', index=False)
 conn.close()
+
+# PRAGMA table_info(mental_Marriage_Data);
+# I used it to make sure the data is clean not null and the types are correct 
