@@ -4,7 +4,7 @@
 Impact of Mental Health on Marriage in the USA (2021  and 2022)
 
 ## Main Question
-Does mental health scoping it to (4 mental illness only constraints), impact marrige rates in diffrent USA States?
+Does mental health scoping it to mental illness and suicidality, impact marrige rates in diffrent USA States?
 
 ## Description
 With the growing focus on mental health, this project will examine whether there is a connection between mental health conditions, suicidality, and marriage rates. This study will explore if states with higher levels of mental illness or suicidality show different marriage rates. The goal is to determine if mental health challenges and thoughts of suicide in some states may relate to lower marriage rates.
@@ -22,11 +22,16 @@ With the growing focus on mental health, this project will examine whether there
 - **Data URL:** [https://www.samhsa.gov/data/sites/default/files/reports/rpt44484/2022-nsduh-sae-tables-percent-CSVs/2022-nsduh-sae-tables-percent.xlsx](https://www.samhsa.gov/data/sites/default/files/reports/rpt44484/2022-nsduh-sae-tables-percent-CSVs/2022-nsduh-sae-tables-percent.xlsx).
 - **Data Type:** tables in xlsx
 - **Description:** This dataset includes key mental health indicators by state, such as:
-  - **Mental Illness:(4 constraints)**
+- **(7 constraints)**
+  - **Mental Illness:**
     - Any Mental Illness in the Past Year (Table 31)
     - Serious Mental Illness in the Past Year (Table 32)
     - Received Mental Health Treatment in the Past Year (Table 33)
     - Major Depressive Episode in the Past Year (Table 34)
+  - **Suicidality:**
+    - Had Serious Thoughts of Suicide in the Past Year (Table 35)
+    - Made Any Suicide Plans in the Past Year (Table 36)
+    - Attempted Suicide in the Past Year (Table 37)
 
 These indicators will be analyzed alongside marriage rates to identify any potential correlations.
 
