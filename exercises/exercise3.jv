@@ -1,0 +1,116 @@
+  // Originally following the Car example 
+  // My goal 
+  // 1. Build an automated data pipeline for the following source:
+  // Meta data: https://datacatalog.worldbank.org/search/dataset/0061114/World-Development-Report-2022---Chapter-5-Figures
+  // direct link to data: https://thedocs.worldbank.org/en/doc/7d852628d96b9411d43e5d36d5dff941-0050062022/original/Graphs-Chapter-5-02082022.xlsx
+  // Goal
+  // Extract the data we are interested in
+  // Extract the sheet called “Figure S5.1.2” from the Excel file
+  // Ignore the figure itself and only keep the table with actual data (from cell P2 to S45)
+  // Rename header columns: “ISO3” to "Country Code", “GDP per capita (US$, thousands)” to "GDP per Capita", “Share of government sustainable bonds" to "Bond Issuance Share"
+  // Economy” does not have to be renamed
+  // Validate data, drop all invalid rows
+  // Country Code" must be a valid ISO 3166-1 alpha-3 country code (must not be empty)
+  // GDP per Capita" must be a positive decimal (must not be empty)
+  // Bond Issuance Share" must be a decimal between 0 and 1 (both values included, must not be empty)
+  // Assign fitting built-in SQLite types (e.g., BIGINT, TEXT or FLOAT) to all columns
+  // Write data into a SQLite database called “country-stats.sqlite”
+  // One table “bondIssuance”, containing the data about bond issuance share (columns "Country Code" and "Bond Issuance Share")
+  // One table “gdpPerCapita”, containing the data about GDP per capita (columns "Country Code" and "GDP per Capita")
+
+
+pipeline CountryPipeline{
+
+  // 2. We describe the structure of the pipeline,
+  // the top of the pipeline by connecting blocks via pipes. 
+  // 3. Syntax of a pipe
+
+    SocialbondIssuancesExtractor
+        -> SocialbondIssuancesTextXLSXInterpreter
+        -> ExcelSheetPicker
+        -> ChangeNameHeaderWriter
+        -> Data_filter_2tables
+        -> GDP_PER_Capit_TableInterpreter  
+        -> GDP_PER_Capit_Loader;
+
+    Data_filter_2tables
+        -> SocialbondIssuancesBISTableInterpreter
+        -> SocialbondIssuancesBISLoader;
+
+  // 4. The output of the preceding block is hereby used 
+  // as input for the succeeding block.
+  // 5. Pipes can be further chained, 
+  // leading to an overview of the pipelin
+
+    block SocialbondIssuancesExtractor oftype HttpExtractor {  // Extracts xlsx
+        url: "https://thedocs.worldbank.org/en/doc/7d852628d96b9411d43e5d36d5dff941-0050062022/original/Graphs-Chapter-5-02082022.xlsx";}
+    block SocialbondIssuancesTextXLSXInterpreter oftype XLSXInterpreter { } 
+    
+    // Selects sheet Figure S5.1.2.
+    block ExcelSheetPicker oftype SheetPicker {
+        sheetName: "Figure S5.1.2";
+    }
+
+    block Data_filter_2tables oftype CellRangeSelector {  // range  
+        select: range P2:S*;
+        }
+    // testing other range teq
+    // I could use the normla range but I wanted to test since the last cell is B45 as well wanted to try the *
+    //block Data_filter_2tables oftype CellRangeSelector {    
+        //select: range P2:S45;
+        //}
+
+    //“ISO3” to "Country Code", “GDP per capita (US$, thousands)” to "GDP per Capita",
+    // “Share of government sustainable bonds" to "Bond Issuance Share"
+    block ChangeNameHeaderWriter oftype CellWriter { // Renames columns.
+        at: range P2:S2;  
+        write: [
+            "Country Code",
+            "Economy", // “Economy” does not have to be renamed
+            "GDP per Capita",
+            "Bond Issuance Share"
+        ];
+    }
+
+    block SocialbondIssuancesBISTableInterpreter oftype TableInterpreter { // table No 1
+        header: true;
+        columns: [
+            "Country Code" oftype  CountryCodeAlpha3 ,  // Jayvee 0.6.4 has a CountryCodeAlpha3
+            "Bond Issuance Share" oftype BondIssuanceConstraint
+    ];
+
+    }
+        block GDP_PER_Capit_TableInterpreter oftype TableInterpreter { // table No 2
+            header: true;
+            columns: [
+            "Country Code" oftype  CountryCodeAlpha3 , 
+            "GDP per Capita" oftype GDPConstraint
+        ];
+        }
+    
+    // Loads a Table into a SQLite database sink.
+    block SocialbondIssuancesBISLoader oftype SQLiteLoader { 
+        table: "bondIssuance";
+        file: "country-stats.sqlite";
+    }
+
+    block GDP_PER_Capit_Loader oftype SQLiteLoader {
+            table: "gdpPerCapita";
+            file: "country-stats.sqlite";
+        }
+ // I dont understand then why we will not use "Economy" we could have deleted it !! Question in the class
+}
+    // Constraints 
+    constraint GDPConstraint_Validation on GDPConstraint:
+                value > 0;  
+
+    constraint BondIssuanceConstraint_Valid on BondIssuanceConstraint:
+                value >= 0 and value <= 1;
+    // I dont understand  why the data it self seems decimal and no empty data !!! Question in the class
+
+    valuetype BondIssuanceConstraint oftype decimal {
+    constraints: [BondIssuanceConstraint_Valid];}
+
+    valuetype GDPConstraint oftype decimal {
+    constraints: [ // 2 rows will be removed 
+                GDPConstraint_Validation];}
