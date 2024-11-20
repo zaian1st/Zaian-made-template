@@ -55,7 +55,7 @@ pipeline CountryPipeline{
         select: range P2:S*;
         }
     // testing other range teq
-    // I could use the normla range but I wanted to test since the last cell is B45 as well wanted to try the *
+    // I could use the normla range but I wanted to test since the last cell is S45 as well wanted to try the *
     //block Data_filter_2tables oftype CellRangeSelector {    
         //select: range P2:S45;
         //}
