@@ -20,6 +20,7 @@ import pdfplumber
 import pandas as pd  
 from io import BytesIO  
 import sqlite3  
+import time
 
 # URLs for the data sources (one PDF, one Excel file)
 pdf_url = "https://www.cdc.gov/nchs/data/dvs/marriage-divorce/state-marriage-rates-90-95-00-22.pdf"
@@ -29,6 +30,19 @@ excel_url = "https://www.samhsa.gov/data/sites/default/files/reports/rpt44484/20
 # Fetch PDF data from the URL
 response = requests.get(pdf_url)
 response.raise_for_status()  # Raise an error if the download fails
+
+'''def fetch_data_with_retry(url, retries=3, delay=5):
+    for attempt in range(1, retries + 1):
+        try:
+            response = requests.get(url)
+            response.raise_for_status()  # Raise error if the request fails
+            return response.content
+        except requests.RequestException as e:
+            if attempt < retries:
+                print(f"Retrying in {delay} seconds...")
+                time.sleep(delay)
+    raise Exception(f"Failed to fetch data from {url} after {retries} attempts.")'''
+
 
 # Extract marriage rate data for each state (2022 and 2021) from PDF
 data = []
