@@ -1,0 +1,137 @@
+  // Originally following the Car example 
+  // My goal 
+  // Download and unzip data
+  // Use the “data.csv” in the zip file
+  // Reshape data
+  // Only use the columns "Geraet", "Hersteller", "Model", "Monat", "Temperatur in °C (DWD)", "Batterietemperatur in °C"
+  // There can be multiple temperature measurements per row
+  // You can ignore all columns to the right of the first “​​Geraet aktiv”
+  // Translate/rename column headers from German to English:
+  // “Geraet” to “id”
+  // “Hersteller” to “producer”
+  // “Model” to “model”
+  // “Monat” to “month”
+  // “Temperatur in °C (DWD)” to “temperature”
+  // “Batterietemperatur in °C” to “battery_temperature”
+  // Transform data
+  // Transform temperatures in Celsius to Fahrenheit (formula is (TemperatureInCelsius * 9/5) + 32) in place (keep the same column names)
+  // For the columns temperature and battery_temperature
+  // Validate data
+  // Use validations as you see fit, e.g., for “Geraet” to be an id over 0
+  // Use fitting SQLite types (e.g., BIGINT, TEXT or FLOAT) for all columns
+  // Write data into a SQLite database called “temperatures.sqlite”, in the table “temperatures”
+
+pipeline TemperaturesPipeline{
+    TemperaturesExtractor
+        ->TemperaturesArchiveInterpreter
+        ->TemperaturesCSVPicker
+        ->TemperaturesTXTInterpreter
+        ->TemperaturesCSVInterpreter
+        ->TemperaturesRenameColumns 
+        ->ColJWriter
+        ->TemperaturesDeleteColumns
+        ->TemperaturesTableInterpreter
+        ->CToFtemperature
+        ->CToFbattery_temp
+        ->TemperaturesLoader;
+
+    //Extracts a zip file
+    block TemperaturesExtractor oftype HttpExtractor { 
+        url: "https://www.mowesta.com/data/measure/mowesta-dataset-20221107.zip";
+    } 
+
+    // Interprets a File as an archive file and converts it to a FileSystem. The archive file root is considered the root of the FileSystem.
+    // The archive type to be interpreted, e.g., "zip" or "gz". https://jvalue.github.io/jayvee/docs/user/block-types/ArchiveInterpreter
+    block TemperaturesArchiveInterpreter oftype ArchiveInterpreter {
+        archiveType: "zip";
+    }
+
+    // Selects one File from a FileSystem based on its relative path to the root of the FileSystem. If no file matches the relative path, no output is created and the execution of the pipeline is aborted.
+    // https://jvalue.github.io/jayvee/docs/user/block-types/FilePicker
+    block TemperaturesCSVPicker oftype FilePicker {
+        path: "./data.csv";
+    }
+
+    // Interprets the TextFile.
+    // Interprets the input file as a csv-file containing string-values delimited.
+    block TemperaturesTXTInterpreter oftype TextFileInterpreter { }
+    block TemperaturesCSVInterpreter oftype CSVInterpreter {
+        delimiter: ";";
+    }
+    //                         A           B           C        D               E                      F*x  its J                         
+    // Only use the columns "Geraet", "Hersteller", "Model", "Monat", "Temperatur in °C (DWD)", "Batterietemperatur in °C"  Wrong its not col F seems J
+    // Rename and Removes columns
+    block TemperaturesRenameColumns oftype CellWriter {
+        at: range A1:E1;  // since F is not the "battery_temperature" we will chose from A1 to E1
+        write : ["id", "producer", "model", "month", "temperature"]; 
+        // write : ["id", "producer", "model", "month", "temperature" ,"battery_temperature"];   
+    }
+    block ColJWriter oftype CellWriter {
+        at: cell J1;
+        write: [
+        "battery_temperature"
+        ];
+    }
+
+    block TemperaturesDeleteColumns oftype ColumnDeleter {
+        delete: [column F, column G, column H, column I, column K, column M, column N, column O];
+    }
+
+    // Interprets a Sheet as a Table
+    block TemperaturesTableInterpreter oftype TableInterpreter {
+        header : false;
+        columns : [
+            "id" oftype IdsConstraint,
+            "producer" oftype text,
+            "model" oftype text,
+            "month" oftype monthsConstraint,
+            "temperature" oftype decimal,
+            "battery_temperature" oftype decimal,
+        ];
+    }
+
+    // Applies the transform on each value in  'temperature'  and 'battery_temperature' columns
+    block CToFtemperature oftype TableTransformer {
+        inputColumns: ['temperature'];
+        outputColumn: 'temperature';
+        uses: CelsiusToFahrenheit;
+    }
+    block CToFbattery_temp oftype TableTransformer {
+        inputColumns: ['battery_temperature'];
+        outputColumn: 'battery_temperature';
+        uses: CelsiusToFahrenheit;
+    }
+
+    // Loads the table into the SQLite database sink.
+    block TemperaturesLoader oftype SQLiteLoader {
+        table: "temperatures";
+        file: "temperatures.sqlite";
+    }
+  
+    // Converts temperature from degree Celsius to Fahrenheit   
+    transform CelsiusToFahrenheit {
+        from TempC oftype decimal;
+        to TempF oftype decimal;
+        TempF: (TempC * 9/5) + 32;
+    }
+
+    // Primitive Value Types
+    valuetype IdsConstraint oftype integer {
+    constraints: [
+                IdConstraint_Valid];
+                }
+
+    valuetype monthsConstraint oftype integer {
+    constraints: [
+                monthsConstraint_Valid];
+                }
+
+    // Data validation
+    // Constraints
+    constraint IdConstraint_Valid on IdsConstraint:
+            value > 0; //positive value
+            
+
+    constraint monthsConstraint_Valid on integer:
+            value > 0 and value <= 12;  //month 
+}        
