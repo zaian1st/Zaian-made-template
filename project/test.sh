@@ -13,8 +13,8 @@ total_tests=$(echo "$pytest_output" | grep -oP 'collected \K[0-9]+')
 passed_tests=$(echo "$pytest_output" | grep -oP '\b[0-9]+ passed\b' | grep -oP '[0-9]+')
 failed_tests=$((total_tests - passed_tests))
 
-# Each test  20 marks Display the score
-marks_per_test=20
+# marks Display the score
+marks_per_test=25
 total_marks=$((total_tests * marks_per_test))
 score=$((passed_tests * marks_per_test))
 if [ "$pytest_exit_code" -eq 0 ]; then
