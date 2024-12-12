@@ -21,7 +21,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pytest pandas pdfplumber requests
+        pip install pytest pandas pdfplumber requests openpyxl
 
     - name: Run Tests
       run: |
