@@ -54,7 +54,7 @@ def test_load_excel_data():
         assert not df.empty, f"Sheet {sheet} is empty"
         assert "State" in df.columns, "State column is missing in the Excel data"
         
-def test_end_to_end():
+def systemtest():
     # Define the expected output database file path
     database_full_path = os.path.join(os.path.dirname(__file__), "../data/merged_mental_marriage_data.sqlite")
 
@@ -63,14 +63,16 @@ def test_end_to_end():
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
-    # Run the pipeline script
-    result = subprocess.run(["python", "./project/pipeline.py"], capture_output=True, text=True)
+    # Run the pipeline script (correct path for pipeline.py)
+    pipeline_path = os.path.join(os.path.dirname(__file__), "pipeline.py")
+    result = subprocess.run(["python", pipeline_path], capture_output=True, text=True)
 
     # Assert that the pipeline executed successfully
     assert result.returncode == 0, f"Pipeline execution failed with error:\n{result.stderr}"
 
     # Validate that the database file was created
     assert os.path.exists(database_full_path), f"Output database file not found at {database_full_path}"
+
 
 
 def test_merge_dataframes(): # Integration Tests
