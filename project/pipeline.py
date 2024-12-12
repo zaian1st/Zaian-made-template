@@ -31,6 +31,7 @@ excel_url = "https://www.samhsa.gov/data/sites/default/files/reports/rpt44484/20
 # Fetch PDF data from the URL
 response = requests.get(pdf_url)
 response.raise_for_status()  # Raise an error if the download fails
+print("Marriage rates data loaded.")
 
 '''def fetch_data_with_retry(url, retries=3, delay=5):
     for attempt in range(1, retries + 1):
@@ -74,6 +75,7 @@ df_pdf = pd.DataFrame(data, columns=[
 # Step 2: Load Mental Health Data and Suicide from Excel
 # Each sheet requires specific rows to skip at the top
 # These will be the sheets I am intersted in 
+print("Mental health data loading started...")
 sheet_info = {
     "Table 31": 5,
     "Table 32": 5,
@@ -115,6 +117,7 @@ dfs = {}
 # Process each sheet based on the given information
 for sheet, skip_rows in sheet_info.items():
     df = pd.read_excel(excel_url, sheet_name=sheet, skiprows=skip_rows)
+    print("Mental health data loaded.")
     state_column = df.columns[1]  # Assume the second column has state names
     df = df.dropna(subset=[state_column])  # Remove rows with no state name
     
@@ -171,8 +174,11 @@ final_merged_df = pd.merge(df_pdf, merged_df, on="State", how="inner")
 data_dir = "data"
 if not os.path.exists(data_dir):
     os.makedirs(data_dir)
+print("Marriage rates data loading started...")
+
     
 conn = sqlite3.connect(r'data/merged_mental_marriage_data.sqlite')
+print("Pipeline execution completed.")
 final_merged_df.to_sql('mental_Marriage_Data', conn, if_exists='replace', index=False)
 conn.close()
 
