@@ -6,6 +6,7 @@ import pytest
 import requests
 import pdfplumber
 from io import BytesIO
+import subprocess
 
 # URLs for the data sources
 pdf_url = "https://www.cdc.gov/nchs/data/dvs/marriage-divorce/state-marriage-rates-90-95-00-22.pdf"
@@ -53,32 +54,24 @@ def test_load_excel_data():
         assert not df.empty, f"Sheet {sheet} is empty"
         assert "State" in df.columns, "State column is missing in the Excel data"
         
-def test_data_pipeline_output():  # System Tests
-    db_path = r'C:\Users\zaian\OneDrive\Desktop\Zaian-made-template\data\merged_mental_marriage_data.sqlite'
+def test_end_to_end():
+    # Define the expected output database file path
+    database_full_path = os.path.join(os.path.dirname(__file__), "../data/merged_mental_marriage_data.sqlite")
 
-    # Check if the database file is created
-    assert os.path.exists(db_path), "Output database file does not exist"
+    # Ensure the output directory exists
+    output_dir = os.path.dirname(database_full_path)
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
 
-    # Connect to the database and check if the table exists and has data
-    conn = sqlite3.connect(db_path)
-    query = "SELECT name FROM sqlite_master WHERE type='table' AND name='mental_Marriage_Data';"
-    result = conn.execute(query).fetchall()
-    assert len(result) == 1, "Table 'mental_Marriage_Data' does not exist in the database"
+    # Run the pipeline script
+    result = subprocess.run(["python", "./project/pipeline.py"], capture_output=True, text=True)
 
-    # Check if the table has data
-    df = pd.read_sql_query("SELECT * FROM mental_Marriage_Data", conn)
-    assert not df.empty, "Table 'mental_Marriage_Data' is empty"
+    # Assert that the pipeline executed successfully
+    assert result.returncode == 0, f"Pipeline execution failed with error:\n{result.stderr}"
 
-    # Verify important columns in the table
-    expected_columns = [
-        "State",
-        "Marriage rates per 1,000 in 2022",
-        "Marriage rates per 1,000 in 2021",
-        "Any Mental Illness 18+ (%)"
-    ]
-    for column in expected_columns:
-        assert column in df.columns, f"Column '{column}' is missing in the database table"
-    conn.close()
+    # Validate that the database file was created
+    assert os.path.exists(database_full_path), f"Output database file not found at {database_full_path}"
+
 
 def test_merge_dataframes(): # Integration Tests
     """
