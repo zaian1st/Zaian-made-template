@@ -1,4 +1,4 @@
-name: CI Pipeline 🛠️🚀
+name: CI Pipeline
 
 on:
   push:
@@ -7,31 +7,24 @@ on:
 
 jobs:
   test:
-    name: Run Tests ✅
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository 📂
+    - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Set up Python 🐍
+    - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.9'
 
-    - name: Install Dependencies 📦
+    - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install pytest pandas pdfplumber requests
 
-    - name: Run Tests 🧪
+    - name: Run Tests
       run: |
+        cd project  # Navigate to the project directory
         chmod +x test.sh
         ./test.sh
-      env:
-        API_KEY: ${{ secrets.API_KEY }}
-        DATABASE_URL: ${{ secrets.DATABASE_URL }}
-
-    - name: Tests Passed 🎉
-      if: success()
-      run: echo "All tests passed! 🚀✨"
