@@ -14,6 +14,7 @@ https://pandas.pydata.org/docs/
 https://docs.python.org/3/library/io.html
 https://docs.python.org/3/library/sqlite3.html
 '''
+import os
 import re  
 import requests 
 import pdfplumber  
@@ -166,6 +167,11 @@ final_merged_df = pd.merge(df_pdf, merged_df, on="State", how="inner")
 
 # Step 5: Save the Final Data to SQLite Database
 # Connect to SQLite database and save final data to a table
+# Ensure the data directory exists
+data_dir = "data"
+if not os.path.exists(data_dir):
+    os.makedirs(data_dir)
+    
 conn = sqlite3.connect(r'data/merged_mental_marriage_data.sqlite')
 final_merged_df.to_sql('mental_Marriage_Data', conn, if_exists='replace', index=False)
 conn.close()
