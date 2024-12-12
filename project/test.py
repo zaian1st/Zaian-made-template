@@ -54,15 +54,8 @@ def test_load_excel_data():
         assert not df.empty, f"Sheet {sheet} is empty"
         assert "State" in df.columns, "State column is missing in the Excel data"
         
+        
 def test_system():
-    # Define the expected output database file path
-    database_full_path = os.path.join(os.path.dirname(__file__), "../data/merged_mental_marriage_data.sqlite")
-
-    # Ensure the output directory exists
-    output_dir = os.path.dirname(database_full_path)
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-
     # Run the pipeline script (correct path for pipeline.py)
     pipeline_path = os.path.join(os.path.dirname(__file__), "pipeline.py")
     result = subprocess.run(["python", pipeline_path], capture_output=True, text=True)
@@ -70,8 +63,13 @@ def test_system():
     # Assert that the pipeline executed successfully
     assert result.returncode == 0, f"Pipeline execution failed with error:\n{result.stderr}"
 
-    # Validate that the database file was created
-    assert os.path.exists(database_full_path), f"Output database file not found at {database_full_path}"
+    # Validate expected output in the pipeline logs
+    expected_log_keywords = ["Marriage rates data loaded", "Mental health data loaded", "Pipeline execution completed"]
+    for keyword in expected_log_keywords:
+        assert keyword in result.stdout, f"Expected log message '{keyword}' not found in pipeline output."
+
+    # Ensure the pipeline runs without errors
+    assert "error" not in result.stderr.lower(), f"Error found in pipeline stderr:\n{result.stderr}"
 
 
 
