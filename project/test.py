@@ -54,7 +54,7 @@ def test_load_excel_data():
         assert not df.empty, f"Sheet {sheet} is empty"
         assert "State" in df.columns, "State column is missing in the Excel data"
         
-def systemtest():
+def test_system():
     # Define the expected output database file path
     database_full_path = os.path.join(os.path.dirname(__file__), "../data/merged_mental_marriage_data.sqlite")
 
@@ -72,6 +72,7 @@ def systemtest():
 
     # Validate that the database file was created
     assert os.path.exists(database_full_path), f"Output database file not found at {database_full_path}"
+
 
 
 
