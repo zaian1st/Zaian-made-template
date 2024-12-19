@@ -1,0 +1,127 @@
+  // Originally following the Car example 
+  // My goal 
+  // Build an automated data pipeline for the following source:
+  // Direct download link: https://gtfs.rhoenenergie-bus.de/GTFS.zip
+  // Work with domain-specific GTFS data
+  // Pick out only stops (from stops.txt)
+  // Only the columns stop_id, stop_name, stop_lat, stop_lon, zone_id with fitting data types
+  // Filter data
+  // Only keep stops from zone 1925
+  // Validate data
+  // stop_name must be a text but must maintain german umlauts (ä, ö, ü, ...)
+  // stop_lat/stop_lon must be a geographic coordinates between -90 and 90, including upper/lower bounds
+  // Drop rows containing invalid data
+  // Use fitting SQLite types (e.g., BIGINT, TEXT or FLOAT) for all columns
+  // Write data into a SQLite database called “gtfs.sqlite”, in the table “stops”
+
+pipeline Stops_gtfs_pipline{
+    Stops_gtfs_Extractor
+        ->Stops_gtfs_ArchiveInterpreter
+        ->Stops_gtfs_FilePicker
+        ->Stops_gtfs_TextFileInterpreter
+        ->Stops_gtfs_CSVInterpreter
+        ->Stops_gtfs_Selector;
+
+    Stops_gtfs_Selector
+        ->Stops_gtfs_ColumnDeleter
+        ->Stops_gtfs_TableInterpreter
+        ->Stops_gtfs_Loader;
+
+
+    // Extracts a File from the web.
+    block Stops_gtfs_Extractor oftype HttpExtractor { 
+        url: "https://gtfs.rhoenenergie-bus.de/GTFS.zip";
+    } 
+
+    // Interprets a File as a ZIP-archive and creates a FileSystem of its extracted contents.
+    block Stops_gtfs_ArchiveInterpreter oftype ArchiveInterpreter {
+        archiveType: "zip";
+    }
+
+    // Tries to pick the file stops.txt from the root of the provided FileSystem. 
+    //If stops.txt exists it is passed on as File, if it does not exist the execution of the pipeline is aborted. 
+    block Stops_gtfs_FilePicker oftype FilePicker {
+        path: "./stops.txt";
+    }
+
+    // Interprets the file as a TextFile. - encoding Type text Default: "utf-8"
+    block Stops_gtfs_TextFileInterpreter oftype TextFileInterpreter { }
+
+    // Interprets the input file as a csv-file containing string-values delimited.
+    block Stops_gtfs_CSVInterpreter oftype CSVInterpreter {
+        delimiter: ",";
+        enclosing: '"';
+    }
+
+
+    //Selects subset of sheet to produce new sheet  bz selecting till G then automatically drop the rest 
+    block Stops_gtfs_Selector oftype CellRangeSelector {
+        select: range A1:G*;
+    }
+
+    // Delete columns stop_code , stop_desc
+    block Stops_gtfs_ColumnDeleter oftype ColumnDeleter {
+        delete: [column B, column D];
+    }
+    
+
+    // Constraints for value types declare the validity criteria that each concrete value is checked against.
+    valuetype nameConstraint oftype text {
+    constraints: [name_Constraint_Valid];
+                    }
+    valuetype lat_Constraint oftype decimal {
+    constraints: [stop_lat_Constraint_Valid];
+                    }
+    valuetype lon_Constraint oftype decimal {
+    constraints: [stop_lon_Constraint_Valid];
+                    }
+    valuetype zoneid_Constraint oftype integer {
+    constraints: [zoneid_constraint_Valid];
+    }
+
+    // Interprets a Sheet as a Table. In case a header row is present in the sheet, 
+    // its names can be matched with the provided column names. Otherwise, the provided column names are assigned in order
+    block Stops_gtfs_TableInterpreter oftype TableInterpreter {
+        header : true;
+        columns : [
+            "stop_id" oftype integer,
+            "stop_name" oftype nameConstraint,
+            "stop_lat" oftype lat_Constraint,
+            "stop_lon" oftype lon_Constraint,
+            "zone_id" oftype zoneid_Constraint,
+        ];
+    }
+
+    // Loads the table into the SQLite database sink.
+    block Stops_gtfs_Loader oftype SQLiteLoader {
+        table: "stops";
+        file: "gtfs.sqlite";
+    }
+
+
+    // Constraints
+    // Block-like syntax I didnt use the block szntax in previous ex so I want to try it :)
+    constraint stop_lon_Constraint_Valid oftype RangeConstraint {
+        lowerBound: -90;
+        lowerBoundInclusive: true;
+        upperBound: 90;
+        upperBoundInclusive: true;
+        // geo coordinates
+    }
+
+    constraint stop_lat_Constraint_Valid oftype RangeConstraint {
+        lowerBound: -90;
+        lowerBoundInclusive: true;
+        upperBound: 90;
+        upperBoundInclusive: true;
+        // acceptable geo coord.
+    }
+    
+    constraint name_Constraint_Valid on text:
+                //deutsch letter format validation 
+                value matches /^[A-Za-zäöüÄÖÜß\s-]+$/; 
+    
+    constraint zoneid_constraint_Valid on integer:
+                // value accepted
+                value == 1925;
+}
