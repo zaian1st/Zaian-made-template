@@ -1,0 +1,358 @@
+State,Marriage Rate,Mental Health Metric,Mental Health Value,Overall Correlation,P-value
+Alabama,7.45,Any Mental Illness 26+ (%),23.056,0.155,0.279
+Alaska,6.4,Any Mental Illness 26+ (%),22.748,0.155,0.279
+Arizona,5.6,Any Mental Illness 26+ (%),20.887,0.155,0.279
+Arkansas,8.05,Any Mental Illness 26+ (%),22.453,0.155,0.279
+California,3.35,Any Mental Illness 26+ (%),20.308,0.155,0.279
+Colorado,7.45,Any Mental Illness 26+ (%),24.573,0.155,0.279
+Connecticut,5.7,Any Mental Illness 26+ (%),18.858,0.155,0.279
+Delaware,5.0,Any Mental Illness 26+ (%),18.87,0.155,0.279
+District Of Columbia,7.8,Any Mental Illness 26+ (%),24.703,0.155,0.279
+Florida,6.95,Any Mental Illness 26+ (%),18.544,0.155,0.279
+Georgia,5.8,Any Mental Illness 26+ (%),20.746,0.155,0.279
+Hawaii,13.6,Any Mental Illness 26+ (%),19.588,0.155,0.279
+Idaho,7.4,Any Mental Illness 26+ (%),25.743,0.155,0.279
+Illinois,4.8,Any Mental Illness 26+ (%),20.382,0.155,0.279
+Indiana,6.05,Any Mental Illness 26+ (%),21.934,0.155,0.279
+Iowa,5.4,Any Mental Illness 26+ (%),25.078,0.155,0.279
+Kansas,5.45,Any Mental Illness 26+ (%),22.333,0.155,0.279
+Kentucky,6.25,Any Mental Illness 26+ (%),22.516,0.155,0.279
+Louisiana,4.05,Any Mental Illness 26+ (%),23.259,0.155,0.279
+Maine,7.4,Any Mental Illness 26+ (%),22.661,0.155,0.279
+Maryland,5.1,Any Mental Illness 26+ (%),20.143,0.155,0.279
+Massachusetts,4.85,Any Mental Illness 26+ (%),21.231,0.155,0.279
+Michigan,5.25,Any Mental Illness 26+ (%),20.858,0.155,0.279
+Minnesota,5.0,Any Mental Illness 26+ (%),22.502,0.155,0.279
+Mississippi,5.95,Any Mental Illness 26+ (%),21.105,0.155,0.279
+Missouri,5.9,Any Mental Illness 26+ (%),24.779,0.155,0.279
+Montana,10.45,Any Mental Illness 26+ (%),24.481,0.155,0.279
+Nebraska,5.45,Any Mental Illness 26+ (%),23.354,0.155,0.279
+Nevada,26.05,Any Mental Illness 26+ (%),22.941,0.155,0.279
+New Hampshire,6.85,Any Mental Illness 26+ (%),20.539,0.155,0.279
+New Jersey,5.1,Any Mental Illness 26+ (%),16.876,0.155,0.279
+New Mexico,5.05,Any Mental Illness 26+ (%),23.459,0.155,0.279
+New York,5.75,Any Mental Illness 26+ (%),19.709,0.155,0.279
+North Carolina,6.25,Any Mental Illness 26+ (%),20.553,0.155,0.279
+North Dakota,5.3,Any Mental Illness 26+ (%),23.277,0.155,0.279
+Ohio,5.25,Any Mental Illness 26+ (%),22.852,0.155,0.279
+Oklahoma,6.1,Any Mental Illness 26+ (%),24.078,0.155,0.279
+Oregon,5.6,Any Mental Illness 26+ (%),25.07,0.155,0.279
+Pennsylvania,5.5,Any Mental Illness 26+ (%),21.089,0.155,0.279
+Rhode Island,6.1,Any Mental Illness 26+ (%),22.355,0.155,0.279
+South Carolina,6.5,Any Mental Illness 26+ (%),21.013,0.155,0.279
+South Dakota,6.35,Any Mental Illness 26+ (%),22.561,0.155,0.279
+Tennessee,7.45,Any Mental Illness 26+ (%),23.557,0.155,0.279
+Texas,5.8,Any Mental Illness 26+ (%),19.944,0.155,0.279
+Utah,9.5,Any Mental Illness 26+ (%),26.882,0.155,0.279
+Vermont,7.6,Any Mental Illness 26+ (%),24.838,0.155,0.279
+Virginia,5.95,Any Mental Illness 26+ (%),20.4,0.155,0.279
+Washington,5.65,Any Mental Illness 26+ (%),25.079,0.155,0.279
+West Virginia,6.05,Any Mental Illness 26+ (%),24.839,0.155,0.279
+Wisconsin,5.15,Any Mental Illness 26+ (%),21.151,0.155,0.279
+Wyoming,7.35,Any Mental Illness 26+ (%),25.843,0.155,0.279
+Alabama,7.45,Serious Mental Illness 26+ (%),5.266,0.283,0.044
+Alaska,6.4,Serious Mental Illness 26+ (%),5.529,0.283,0.044
+Arizona,5.6,Serious Mental Illness 26+ (%),4.544,0.283,0.044
+Arkansas,8.05,Serious Mental Illness 26+ (%),5.493,0.283,0.044
+California,3.35,Serious Mental Illness 26+ (%),4.661,0.283,0.044
+Colorado,7.45,Serious Mental Illness 26+ (%),6.065,0.283,0.044
+Connecticut,5.7,Serious Mental Illness 26+ (%),4.502,0.283,0.044
+Delaware,5.0,Serious Mental Illness 26+ (%),4.389,0.283,0.044
+District Of Columbia,7.8,Serious Mental Illness 26+ (%),5.794,0.283,0.044
+Florida,6.95,Serious Mental Illness 26+ (%),4.656,0.283,0.044
+Georgia,5.8,Serious Mental Illness 26+ (%),4.946,0.283,0.044
+Hawaii,13.6,Serious Mental Illness 26+ (%),5.092,0.283,0.044
+Idaho,7.4,Serious Mental Illness 26+ (%),5.496,0.283,0.044
+Illinois,4.8,Serious Mental Illness 26+ (%),4.37,0.283,0.044
+Indiana,6.05,Serious Mental Illness 26+ (%),5.306,0.283,0.044
+Iowa,5.4,Serious Mental Illness 26+ (%),6.246,0.283,0.044
+Kansas,5.45,Serious Mental Illness 26+ (%),5.662,0.283,0.044
+Kentucky,6.25,Serious Mental Illness 26+ (%),6.478,0.283,0.044
+Louisiana,4.05,Serious Mental Illness 26+ (%),5.621,0.283,0.044
+Maine,7.4,Serious Mental Illness 26+ (%),4.837,0.283,0.044
+Maryland,5.1,Serious Mental Illness 26+ (%),4.406,0.283,0.044
+Massachusetts,4.85,Serious Mental Illness 26+ (%),4.869,0.283,0.044
+Michigan,5.25,Serious Mental Illness 26+ (%),4.751,0.283,0.044
+Minnesota,5.0,Serious Mental Illness 26+ (%),4.667,0.283,0.044
+Mississippi,5.95,Serious Mental Illness 26+ (%),4.293,0.283,0.044
+Missouri,5.9,Serious Mental Illness 26+ (%),5.551,0.283,0.044
+Montana,10.45,Serious Mental Illness 26+ (%),5.252,0.283,0.044
+Nebraska,5.45,Serious Mental Illness 26+ (%),6.665,0.283,0.044
+Nevada,26.05,Serious Mental Illness 26+ (%),6.014,0.283,0.044
+New Hampshire,6.85,Serious Mental Illness 26+ (%),4.994,0.283,0.044
+New Jersey,5.1,Serious Mental Illness 26+ (%),4.014,0.283,0.044
+New Mexico,5.05,Serious Mental Illness 26+ (%),5.247,0.283,0.044
+New York,5.75,Serious Mental Illness 26+ (%),4.512,0.283,0.044
+North Carolina,6.25,Serious Mental Illness 26+ (%),4.871,0.283,0.044
+North Dakota,5.3,Serious Mental Illness 26+ (%),5.167,0.283,0.044
+Ohio,5.25,Serious Mental Illness 26+ (%),5.5,0.283,0.044
+Oklahoma,6.1,Serious Mental Illness 26+ (%),5.463,0.283,0.044
+Oregon,5.6,Serious Mental Illness 26+ (%),6.043,0.283,0.044
+Pennsylvania,5.5,Serious Mental Illness 26+ (%),4.838,0.283,0.044
+Rhode Island,6.1,Serious Mental Illness 26+ (%),5.476,0.283,0.044
+South Carolina,6.5,Serious Mental Illness 26+ (%),4.619,0.283,0.044
+South Dakota,6.35,Serious Mental Illness 26+ (%),5.311,0.283,0.044
+Tennessee,7.45,Serious Mental Illness 26+ (%),6.0,0.283,0.044
+Texas,5.8,Serious Mental Illness 26+ (%),4.453,0.283,0.044
+Utah,9.5,Serious Mental Illness 26+ (%),7.003,0.283,0.044
+Vermont,7.6,Serious Mental Illness 26+ (%),5.603,0.283,0.044
+Virginia,5.95,Serious Mental Illness 26+ (%),4.687,0.283,0.044
+Washington,5.65,Serious Mental Illness 26+ (%),5.414,0.283,0.044
+West Virginia,6.05,Serious Mental Illness 26+ (%),5.535,0.283,0.044
+Wisconsin,5.15,Serious Mental Illness 26+ (%),5.067,0.283,0.044
+Wyoming,7.35,Serious Mental Illness 26+ (%),6.564,0.283,0.044
+Alabama,7.45,Received Mental Health Treatment 26+ (%),22.362,-0.053,0.711
+Alaska,6.4,Received Mental Health Treatment 26+ (%),20.817,-0.053,0.711
+Arizona,5.6,Received Mental Health Treatment 26+ (%),19.809,-0.053,0.711
+Arkansas,8.05,Received Mental Health Treatment 26+ (%),20.871,-0.053,0.711
+California,3.35,Received Mental Health Treatment 26+ (%),17.078,-0.053,0.711
+Colorado,7.45,Received Mental Health Treatment 26+ (%),25.462,-0.053,0.711
+Connecticut,5.7,Received Mental Health Treatment 26+ (%),20.329,-0.053,0.711
+Delaware,5.0,Received Mental Health Treatment 26+ (%),21.771,-0.053,0.711
+District Of Columbia,7.8,Received Mental Health Treatment 26+ (%),29.622,-0.053,0.711
+Florida,6.95,Received Mental Health Treatment 26+ (%),15.497,-0.053,0.711
+Georgia,5.8,Received Mental Health Treatment 26+ (%),18.522,-0.053,0.711
+Hawaii,13.6,Received Mental Health Treatment 26+ (%),16.355,-0.053,0.711
+Idaho,7.4,Received Mental Health Treatment 26+ (%),27.266,-0.053,0.711
+Illinois,4.8,Received Mental Health Treatment 26+ (%),21.818,-0.053,0.711
+Indiana,6.05,Received Mental Health Treatment 26+ (%),23.652,-0.053,0.711
+Iowa,5.4,Received Mental Health Treatment 26+ (%),25.725,-0.053,0.711
+Kansas,5.45,Received Mental Health Treatment 26+ (%),27.369,-0.053,0.711
+Kentucky,6.25,Received Mental Health Treatment 26+ (%),25.02,-0.053,0.711
+Louisiana,4.05,Received Mental Health Treatment 26+ (%),22.515,-0.053,0.711
+Maine,7.4,Received Mental Health Treatment 26+ (%),25.635,-0.053,0.711
+Maryland,5.1,Received Mental Health Treatment 26+ (%),19.963,-0.053,0.711
+Massachusetts,4.85,Received Mental Health Treatment 26+ (%),23.223,-0.053,0.711
+Michigan,5.25,Received Mental Health Treatment 26+ (%),23.856,-0.053,0.711
+Minnesota,5.0,Received Mental Health Treatment 26+ (%),24.8,-0.053,0.711
+Mississippi,5.95,Received Mental Health Treatment 26+ (%),19.164,-0.053,0.711
+Missouri,5.9,Received Mental Health Treatment 26+ (%),27.898,-0.053,0.711
+Montana,10.45,Received Mental Health Treatment 26+ (%),26.994,-0.053,0.711
+Nebraska,5.45,Received Mental Health Treatment 26+ (%),22.549,-0.053,0.711
+Nevada,26.05,Received Mental Health Treatment 26+ (%),19.844,-0.053,0.711
+New Hampshire,6.85,Received Mental Health Treatment 26+ (%),25.085,-0.053,0.711
+New Jersey,5.1,Received Mental Health Treatment 26+ (%),19.476,-0.053,0.711
+New Mexico,5.05,Received Mental Health Treatment 26+ (%),18.7,-0.053,0.711
+New York,5.75,Received Mental Health Treatment 26+ (%),19.479,-0.053,0.711
+North Carolina,6.25,Received Mental Health Treatment 26+ (%),22.597,-0.053,0.711
+North Dakota,5.3,Received Mental Health Treatment 26+ (%),24.133,-0.053,0.711
+Ohio,5.25,Received Mental Health Treatment 26+ (%),25.31,-0.053,0.711
+Oklahoma,6.1,Received Mental Health Treatment 26+ (%),20.851,-0.053,0.711
+Oregon,5.6,Received Mental Health Treatment 26+ (%),26.957,-0.053,0.711
+Pennsylvania,5.5,Received Mental Health Treatment 26+ (%),23.661,-0.053,0.711
+Rhode Island,6.1,Received Mental Health Treatment 26+ (%),22.115,-0.053,0.711
+South Carolina,6.5,Received Mental Health Treatment 26+ (%),21.424,-0.053,0.711
+South Dakota,6.35,Received Mental Health Treatment 26+ (%),23.351,-0.053,0.711
+Tennessee,7.45,Received Mental Health Treatment 26+ (%),21.556,-0.053,0.711
+Texas,5.8,Received Mental Health Treatment 26+ (%),17.323,-0.053,0.711
+Utah,9.5,Received Mental Health Treatment 26+ (%),26.723,-0.053,0.711
+Vermont,7.6,Received Mental Health Treatment 26+ (%),30.933,-0.053,0.711
+Virginia,5.95,Received Mental Health Treatment 26+ (%),23.157,-0.053,0.711
+Washington,5.65,Received Mental Health Treatment 26+ (%),22.852,-0.053,0.711
+West Virginia,6.05,Received Mental Health Treatment 26+ (%),26.494,-0.053,0.711
+Wisconsin,5.15,Received Mental Health Treatment 26+ (%),24.694,-0.053,0.711
+Wyoming,7.35,Received Mental Health Treatment 26+ (%),27.514,-0.053,0.711
+Alabama,7.45,Major Depressive Episode 26+ (%),6.698,0.182,0.202
+Alaska,6.4,Major Depressive Episode 26+ (%),8.555,0.182,0.202
+Arizona,5.6,Major Depressive Episode 26+ (%),6.874,0.182,0.202
+Arkansas,8.05,Major Depressive Episode 26+ (%),6.74,0.182,0.202
+California,3.35,Major Depressive Episode 26+ (%),6.77,0.182,0.202
+Colorado,7.45,Major Depressive Episode 26+ (%),8.276,0.182,0.202
+Connecticut,5.7,Major Depressive Episode 26+ (%),6.571,0.182,0.202
+Delaware,5.0,Major Depressive Episode 26+ (%),6.681,0.182,0.202
+District Of Columbia,7.8,Major Depressive Episode 26+ (%),9.253,0.182,0.202
+Florida,6.95,Major Depressive Episode 26+ (%),6.124,0.182,0.202
+Georgia,5.8,Major Depressive Episode 26+ (%),6.559,0.182,0.202
+Hawaii,13.6,Major Depressive Episode 26+ (%),6.028,0.182,0.202
+Idaho,7.4,Major Depressive Episode 26+ (%),8.228,0.182,0.202
+Illinois,4.8,Major Depressive Episode 26+ (%),6.499,0.182,0.202
+Indiana,6.05,Major Depressive Episode 26+ (%),7.297,0.182,0.202
+Iowa,5.4,Major Depressive Episode 26+ (%),8.239,0.182,0.202
+Kansas,5.45,Major Depressive Episode 26+ (%),7.677,0.182,0.202
+Kentucky,6.25,Major Depressive Episode 26+ (%),8.247,0.182,0.202
+Louisiana,4.05,Major Depressive Episode 26+ (%),6.538,0.182,0.202
+Maine,7.4,Major Depressive Episode 26+ (%),7.561,0.182,0.202
+Maryland,5.1,Major Depressive Episode 26+ (%),6.404,0.182,0.202
+Massachusetts,4.85,Major Depressive Episode 26+ (%),6.994,0.182,0.202
+Michigan,5.25,Major Depressive Episode 26+ (%),6.55,0.182,0.202
+Minnesota,5.0,Major Depressive Episode 26+ (%),7.37,0.182,0.202
+Mississippi,5.95,Major Depressive Episode 26+ (%),5.745,0.182,0.202
+Missouri,5.9,Major Depressive Episode 26+ (%),7.787,0.182,0.202
+Montana,10.45,Major Depressive Episode 26+ (%),8.336,0.182,0.202
+Nebraska,5.45,Major Depressive Episode 26+ (%),8.354,0.182,0.202
+Nevada,26.05,Major Depressive Episode 26+ (%),8.133,0.182,0.202
+New Hampshire,6.85,Major Depressive Episode 26+ (%),7.051,0.182,0.202
+New Jersey,5.1,Major Depressive Episode 26+ (%),5.342,0.182,0.202
+New Mexico,5.05,Major Depressive Episode 26+ (%),7.692,0.182,0.202
+New York,5.75,Major Depressive Episode 26+ (%),6.188,0.182,0.202
+North Carolina,6.25,Major Depressive Episode 26+ (%),6.951,0.182,0.202
+North Dakota,5.3,Major Depressive Episode 26+ (%),7.828,0.182,0.202
+Ohio,5.25,Major Depressive Episode 26+ (%),8.024,0.182,0.202
+Oklahoma,6.1,Major Depressive Episode 26+ (%),8.187,0.182,0.202
+Oregon,5.6,Major Depressive Episode 26+ (%),9.042,0.182,0.202
+Pennsylvania,5.5,Major Depressive Episode 26+ (%),7.081,0.182,0.202
+Rhode Island,6.1,Major Depressive Episode 26+ (%),8.054,0.182,0.202
+South Carolina,6.5,Major Depressive Episode 26+ (%),6.812,0.182,0.202
+South Dakota,6.35,Major Depressive Episode 26+ (%),7.57,0.182,0.202
+Tennessee,7.45,Major Depressive Episode 26+ (%),7.23,0.182,0.202
+Texas,5.8,Major Depressive Episode 26+ (%),6.512,0.182,0.202
+Utah,9.5,Major Depressive Episode 26+ (%),8.666,0.182,0.202
+Vermont,7.6,Major Depressive Episode 26+ (%),8.483,0.182,0.202
+Virginia,5.95,Major Depressive Episode 26+ (%),6.061,0.182,0.202
+Washington,5.65,Major Depressive Episode 26+ (%),7.765,0.182,0.202
+West Virginia,6.05,Major Depressive Episode 26+ (%),8.493,0.182,0.202
+Wisconsin,5.15,Major Depressive Episode 26+ (%),7.294,0.182,0.202
+Wyoming,7.35,Major Depressive Episode 26+ (%),9.143,0.182,0.202
+Alabama,7.45,Thoughts of Suicide 26+ (%),4.168,0.256,0.07
+Alaska,6.4,Thoughts of Suicide 26+ (%),3.947,0.256,0.07
+Arizona,5.6,Thoughts of Suicide 26+ (%),3.671,0.256,0.07
+Arkansas,8.05,Thoughts of Suicide 26+ (%),3.879,0.256,0.07
+California,3.35,Thoughts of Suicide 26+ (%),3.62,0.256,0.07
+Colorado,7.45,Thoughts of Suicide 26+ (%),4.518,0.256,0.07
+Connecticut,5.7,Thoughts of Suicide 26+ (%),2.913,0.256,0.07
+Delaware,5.0,Thoughts of Suicide 26+ (%),3.474,0.256,0.07
+District Of Columbia,7.8,Thoughts of Suicide 26+ (%),3.999,0.256,0.07
+Florida,6.95,Thoughts of Suicide 26+ (%),3.568,0.256,0.07
+Georgia,5.8,Thoughts of Suicide 26+ (%),3.663,0.256,0.07
+Hawaii,13.6,Thoughts of Suicide 26+ (%),3.489,0.256,0.07
+Idaho,7.4,Thoughts of Suicide 26+ (%),5.015,0.256,0.07
+Illinois,4.8,Thoughts of Suicide 26+ (%),4.043,0.256,0.07
+Indiana,6.05,Thoughts of Suicide 26+ (%),3.952,0.256,0.07
+Iowa,5.4,Thoughts of Suicide 26+ (%),4.102,0.256,0.07
+Kansas,5.45,Thoughts of Suicide 26+ (%),3.969,0.256,0.07
+Kentucky,6.25,Thoughts of Suicide 26+ (%),4.463,0.256,0.07
+Louisiana,4.05,Thoughts of Suicide 26+ (%),4.415,0.256,0.07
+Maine,7.4,Thoughts of Suicide 26+ (%),3.57,0.256,0.07
+Maryland,5.1,Thoughts of Suicide 26+ (%),2.955,0.256,0.07
+Massachusetts,4.85,Thoughts of Suicide 26+ (%),2.998,0.256,0.07
+Michigan,5.25,Thoughts of Suicide 26+ (%),4.11,0.256,0.07
+Minnesota,5.0,Thoughts of Suicide 26+ (%),3.797,0.256,0.07
+Mississippi,5.95,Thoughts of Suicide 26+ (%),3.749,0.256,0.07
+Missouri,5.9,Thoughts of Suicide 26+ (%),4.129,0.256,0.07
+Montana,10.45,Thoughts of Suicide 26+ (%),4.686,0.256,0.07
+Nebraska,5.45,Thoughts of Suicide 26+ (%),4.873,0.256,0.07
+Nevada,26.05,Thoughts of Suicide 26+ (%),4.42,0.256,0.07
+New Hampshire,6.85,Thoughts of Suicide 26+ (%),3.537,0.256,0.07
+New Jersey,5.1,Thoughts of Suicide 26+ (%),2.912,0.256,0.07
+New Mexico,5.05,Thoughts of Suicide 26+ (%),3.903,0.256,0.07
+New York,5.75,Thoughts of Suicide 26+ (%),3.403,0.256,0.07
+North Carolina,6.25,Thoughts of Suicide 26+ (%),3.504,0.256,0.07
+North Dakota,5.3,Thoughts of Suicide 26+ (%),4.108,0.256,0.07
+Ohio,5.25,Thoughts of Suicide 26+ (%),3.87,0.256,0.07
+Oklahoma,6.1,Thoughts of Suicide 26+ (%),4.094,0.256,0.07
+Oregon,5.6,Thoughts of Suicide 26+ (%),3.948,0.256,0.07
+Pennsylvania,5.5,Thoughts of Suicide 26+ (%),3.424,0.256,0.07
+Rhode Island,6.1,Thoughts of Suicide 26+ (%),3.451,0.256,0.07
+South Carolina,6.5,Thoughts of Suicide 26+ (%),3.618,0.256,0.07
+South Dakota,6.35,Thoughts of Suicide 26+ (%),4.312,0.256,0.07
+Tennessee,7.45,Thoughts of Suicide 26+ (%),3.733,0.256,0.07
+Texas,5.8,Thoughts of Suicide 26+ (%),3.594,0.256,0.07
+Utah,9.5,Thoughts of Suicide 26+ (%),5.2,0.256,0.07
+Vermont,7.6,Thoughts of Suicide 26+ (%),4.041,0.256,0.07
+Virginia,5.95,Thoughts of Suicide 26+ (%),3.553,0.256,0.07
+Washington,5.65,Thoughts of Suicide 26+ (%),4.011,0.256,0.07
+West Virginia,6.05,Thoughts of Suicide 26+ (%),4.403,0.256,0.07
+Wisconsin,5.15,Thoughts of Suicide 26+ (%),3.878,0.256,0.07
+Wyoming,7.35,Thoughts of Suicide 26+ (%),4.515,0.256,0.07
+Alabama,7.45,Made Any Suicide Plans 26+ (%),0.845,0.006,0.964
+Alaska,6.4,Made Any Suicide Plans 26+ (%),1.109,0.006,0.964
+Arizona,5.6,Made Any Suicide Plans 26+ (%),1.034,0.006,0.964
+Arkansas,8.05,Made Any Suicide Plans 26+ (%),0.871,0.006,0.964
+California,3.35,Made Any Suicide Plans 26+ (%),0.844,0.006,0.964
+Colorado,7.45,Made Any Suicide Plans 26+ (%),0.972,0.006,0.964
+Connecticut,5.7,Made Any Suicide Plans 26+ (%),0.715,0.006,0.964
+Delaware,5.0,Made Any Suicide Plans 26+ (%),1.03,0.006,0.964
+District Of Columbia,7.8,Made Any Suicide Plans 26+ (%),1.027,0.006,0.964
+Florida,6.95,Made Any Suicide Plans 26+ (%),1.007,0.006,0.964
+Georgia,5.8,Made Any Suicide Plans 26+ (%),0.903,0.006,0.964
+Hawaii,13.6,Made Any Suicide Plans 26+ (%),0.771,0.006,0.964
+Idaho,7.4,Made Any Suicide Plans 26+ (%),1.041,0.006,0.964
+Illinois,4.8,Made Any Suicide Plans 26+ (%),0.733,0.006,0.964
+Indiana,6.05,Made Any Suicide Plans 26+ (%),0.96,0.006,0.964
+Iowa,5.4,Made Any Suicide Plans 26+ (%),0.849,0.006,0.964
+Kansas,5.45,Made Any Suicide Plans 26+ (%),1.046,0.006,0.964
+Kentucky,6.25,Made Any Suicide Plans 26+ (%),1.175,0.006,0.964
+Louisiana,4.05,Made Any Suicide Plans 26+ (%),1.125,0.006,0.964
+Maine,7.4,Made Any Suicide Plans 26+ (%),0.878,0.006,0.964
+Maryland,5.1,Made Any Suicide Plans 26+ (%),0.772,0.006,0.964
+Massachusetts,4.85,Made Any Suicide Plans 26+ (%),0.699,0.006,0.964
+Michigan,5.25,Made Any Suicide Plans 26+ (%),0.962,0.006,0.964
+Minnesota,5.0,Made Any Suicide Plans 26+ (%),0.768,0.006,0.964
+Mississippi,5.95,Made Any Suicide Plans 26+ (%),0.791,0.006,0.964
+Missouri,5.9,Made Any Suicide Plans 26+ (%),0.916,0.006,0.964
+Montana,10.45,Made Any Suicide Plans 26+ (%),1.04,0.006,0.964
+Nebraska,5.45,Made Any Suicide Plans 26+ (%),1.016,0.006,0.964
+Nevada,26.05,Made Any Suicide Plans 26+ (%),0.899,0.006,0.964
+New Hampshire,6.85,Made Any Suicide Plans 26+ (%),0.915,0.006,0.964
+New Jersey,5.1,Made Any Suicide Plans 26+ (%),0.696,0.006,0.964
+New Mexico,5.05,Made Any Suicide Plans 26+ (%),0.939,0.006,0.964
+New York,5.75,Made Any Suicide Plans 26+ (%),0.645,0.006,0.964
+North Carolina,6.25,Made Any Suicide Plans 26+ (%),0.883,0.006,0.964
+North Dakota,5.3,Made Any Suicide Plans 26+ (%),1.117,0.006,0.964
+Ohio,5.25,Made Any Suicide Plans 26+ (%),1.096,0.006,0.964
+Oklahoma,6.1,Made Any Suicide Plans 26+ (%),1.029,0.006,0.964
+Oregon,5.6,Made Any Suicide Plans 26+ (%),0.997,0.006,0.964
+Pennsylvania,5.5,Made Any Suicide Plans 26+ (%),0.826,0.006,0.964
+Rhode Island,6.1,Made Any Suicide Plans 26+ (%),0.979,0.006,0.964
+South Carolina,6.5,Made Any Suicide Plans 26+ (%),0.899,0.006,0.964
+South Dakota,6.35,Made Any Suicide Plans 26+ (%),0.882,0.006,0.964
+Tennessee,7.45,Made Any Suicide Plans 26+ (%),0.966,0.006,0.964
+Texas,5.8,Made Any Suicide Plans 26+ (%),0.933,0.006,0.964
+Utah,9.5,Made Any Suicide Plans 26+ (%),0.995,0.006,0.964
+Vermont,7.6,Made Any Suicide Plans 26+ (%),0.998,0.006,0.964
+Virginia,5.95,Made Any Suicide Plans 26+ (%),0.858,0.006,0.964
+Washington,5.65,Made Any Suicide Plans 26+ (%),0.801,0.006,0.964
+West Virginia,6.05,Made Any Suicide Plans 26+ (%),0.92,0.006,0.964
+Wisconsin,5.15,Made Any Suicide Plans 26+ (%),0.985,0.006,0.964
+Wyoming,7.35,Made Any Suicide Plans 26+ (%),1.025,0.006,0.964
+Alabama,7.45,Attempted Suicide 26+ (%),0.454,-0.087,0.544
+Alaska,6.4,Attempted Suicide 26+ (%),0.46,-0.087,0.544
+Arizona,5.6,Attempted Suicide 26+ (%),0.471,-0.087,0.544
+Arkansas,8.05,Attempted Suicide 26+ (%),0.588,-0.087,0.544
+California,3.35,Attempted Suicide 26+ (%),0.328,-0.087,0.544
+Colorado,7.45,Attempted Suicide 26+ (%),0.474,-0.087,0.544
+Connecticut,5.7,Attempted Suicide 26+ (%),0.339,-0.087,0.544
+Delaware,5.0,Attempted Suicide 26+ (%),0.428,-0.087,0.544
+District Of Columbia,7.8,Attempted Suicide 26+ (%),0.399,-0.087,0.544
+Florida,6.95,Attempted Suicide 26+ (%),0.367,-0.087,0.544
+Georgia,5.8,Attempted Suicide 26+ (%),0.424,-0.087,0.544
+Hawaii,13.6,Attempted Suicide 26+ (%),0.307,-0.087,0.544
+Idaho,7.4,Attempted Suicide 26+ (%),0.507,-0.087,0.544
+Illinois,4.8,Attempted Suicide 26+ (%),0.349,-0.087,0.544
+Indiana,6.05,Attempted Suicide 26+ (%),0.404,-0.087,0.544
+Iowa,5.4,Attempted Suicide 26+ (%),0.441,-0.087,0.544
+Kansas,5.45,Attempted Suicide 26+ (%),0.463,-0.087,0.544
+Kentucky,6.25,Attempted Suicide 26+ (%),0.48,-0.087,0.544
+Louisiana,4.05,Attempted Suicide 26+ (%),0.551,-0.087,0.544
+Maine,7.4,Attempted Suicide 26+ (%),0.395,-0.087,0.544
+Maryland,5.1,Attempted Suicide 26+ (%),0.318,-0.087,0.544
+Massachusetts,4.85,Attempted Suicide 26+ (%),0.318,-0.087,0.544
+Michigan,5.25,Attempted Suicide 26+ (%),0.413,-0.087,0.544
+Minnesota,5.0,Attempted Suicide 26+ (%),0.416,-0.087,0.544
+Mississippi,5.95,Attempted Suicide 26+ (%),0.458,-0.087,0.544
+Missouri,5.9,Attempted Suicide 26+ (%),0.447,-0.087,0.544
+Montana,10.45,Attempted Suicide 26+ (%),0.47,-0.087,0.544
+Nebraska,5.45,Attempted Suicide 26+ (%),0.459,-0.087,0.544
+Nevada,26.05,Attempted Suicide 26+ (%),0.37,-0.087,0.544
+New Hampshire,6.85,Attempted Suicide 26+ (%),0.321,-0.087,0.544
+New Jersey,5.1,Attempted Suicide 26+ (%),0.315,-0.087,0.544
+New Mexico,5.05,Attempted Suicide 26+ (%),0.466,-0.087,0.544
+New York,5.75,Attempted Suicide 26+ (%),0.389,-0.087,0.544
+North Carolina,6.25,Attempted Suicide 26+ (%),0.49,-0.087,0.544
+North Dakota,5.3,Attempted Suicide 26+ (%),0.49,-0.087,0.544
+Ohio,5.25,Attempted Suicide 26+ (%),0.51,-0.087,0.544
+Oklahoma,6.1,Attempted Suicide 26+ (%),0.566,-0.087,0.544
+Oregon,5.6,Attempted Suicide 26+ (%),0.42,-0.087,0.544
+Pennsylvania,5.5,Attempted Suicide 26+ (%),0.369,-0.087,0.544
+Rhode Island,6.1,Attempted Suicide 26+ (%),0.425,-0.087,0.544
+South Carolina,6.5,Attempted Suicide 26+ (%),0.437,-0.087,0.544
+South Dakota,6.35,Attempted Suicide 26+ (%),0.447,-0.087,0.544
+Tennessee,7.45,Attempted Suicide 26+ (%),0.492,-0.087,0.544
+Texas,5.8,Attempted Suicide 26+ (%),0.361,-0.087,0.544
+Utah,9.5,Attempted Suicide 26+ (%),0.415,-0.087,0.544
+Vermont,7.6,Attempted Suicide 26+ (%),0.39,-0.087,0.544
+Virginia,5.95,Attempted Suicide 26+ (%),0.305,-0.087,0.544
+Washington,5.65,Attempted Suicide 26+ (%),0.388,-0.087,0.544
+West Virginia,6.05,Attempted Suicide 26+ (%),0.415,-0.087,0.544
+Wisconsin,5.15,Attempted Suicide 26+ (%),0.394,-0.087,0.544
+Wyoming,7.35,Attempted Suicide 26+ (%),0.446,-0.087,0.544
