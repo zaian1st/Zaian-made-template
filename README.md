@@ -13,14 +13,17 @@ This open-source project explores the relationship between mental health metrics
 
 ## File Structure  
 ```plaintext
-. please Ignore other folders as it relates to FAU MADE subject However the project files are 
-├── pipeline.py                  # ETL pipeline script
-├── Final_project.py             # Analysis and visualization script
-├── /data                        # Directory containing the SQLite database
+. please Ignore other folders as it relates to FAU MADE subject However the project files are
+├─\project
+ └── pipeline.py                                                     # ETL pipeline script
+ └── Final_project.py                                                # Analysis and visualization script
+ └── analysis-report.pdf                                             # Analysis findings and visualizations
+ └── data-report.pdf                                                 # Data sources and cleaning process
+ └── Impact of Mental Health on Marriage in the US.pptx              # project powepoint
+├── /data                                                            # Directory containing the SQLite database
 │   └── merged_mental_marriage_data.sqlite
-├── /maps                        # Directory for analysis outputs (e.g., heatmaps, maps, CSV files)
-├── analysis-report.pdf          # Analysis findings and visualizations
-└── data-report.pdf              # Data sources and cleaning process
+├── /maps                                                            # Directory for analysis outputs (e.g., heatmaps, maps, CSV files)
+
 ```
 
 ---
