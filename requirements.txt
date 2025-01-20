@@ -1,0 +1,9 @@
+pandas==1.5.3
+matplotlib==3.7.1
+seaborn==0.12.2
+geopandas==0.12.2
+scipy==1.11.2
+sklearn==1.2.3
+sqlite3==3.35.5  
+pdfplumber==0.7.4
+requests==2.28.2
