@@ -3,6 +3,19 @@
 ## Overview  
 This open-source project explores the relationship between mental health metrics and marriage rates in the United States for the years 2021 and 2022. The analysis focuses on identifying correlations between mental health factors (e.g., Serious Mental Illness, Suicidality) and state-level marriage trends.  
 
+## Scope of the Question  
+The project focuses on specific aspects of mental health and suicidality. Instead of addressing all mental health 
+conditions, we narrow the focus to these key factors: 
+Mental Health  
+1- Any Mental Illness                                               
+2- Serious Mental Illness 
+3- Received Mental Health Treatment    
+4- Major Depressive Episode 
+Suicidality Factors 
+1- Had Serious Thoughts of Suicide    
+2- Made Any Suicide Plans     
+3- Attempted Suicide  
+
 ## Key Features  
 - Data extracted and cleaned using **`pipeline.py`**.  
   - Creates an SQLite database (`merged_mental_marriage_data.sqlite`) with cleaned and merged data.  
@@ -54,7 +67,13 @@ python Final_project.py
 Results will be saved in the `/maps` directory.
 
 ---
+## Conclusion
 
+I am in Favor of Null Hypothesis 
+(𝐻0): There is no significant correlation between marriage rates and mental health metrics or Suicidality 
+Factors. Any observed correlation is due to random chance 
+
+---
 ## Author  
 👨‍💻 **Abdelrahman Zaian**     contact me @ zaianabdelrahman@gmail.com
 
