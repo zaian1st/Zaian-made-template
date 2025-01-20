@@ -19,7 +19,7 @@ This open-source project explores the relationship between mental health metrics
  └── Final_project.py                                                # Analysis and visualization script
  └── analysis-report.pdf                                             # Analysis findings and visualizations
  └── data-report.pdf                                                 # Data sources and cleaning process
- └── Impact of Mental Health on Marriage in the US.pptx              # project powepoint
+ └── slides.pdf                                                      # project powepoint
 ├── /data                                                            # Directory containing the SQLite database
 │   └── merged_mental_marriage_data.sqlite
 ├── /maps                                                            # Directory for analysis outputs (e.g., heatmaps, maps, CSV files)
