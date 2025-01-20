@@ -19,7 +19,10 @@ This open-source project explores the relationship between mental health metrics
  └── Final_project.py                                                # Analysis and visualization script
  └── analysis-report.pdf                                             # Analysis findings and visualizations
  └── data-report.pdf                                                 # Data sources and cleaning process
- └── slides.pdf                                                      # project powepoint
+ └── slides.pdf                                                      # project powerpoint
+ └── usa-states-census-2014                                          # For Geo visualisation
+ └── usa-states-census-2014                                          # For Geo visualisation
+ └── presentation-video.md                                           # Video Link 
 ├── /data                                                            # Directory containing the SQLite database
 │   └── merged_mental_marriage_data.sqlite
 ├── /maps                                                            # Directory for analysis outputs (e.g., heatmaps, maps, CSV files)
@@ -53,7 +56,7 @@ Results will be saved in the `/maps` directory.
 ---
 
 ## Author  
-👨‍💻 **Abdelrahman Zaian**  
+👨‍💻 **Abdelrahman Zaian**     contact me @ zaianabdelrahman@gmail.com
 
 ---
 
