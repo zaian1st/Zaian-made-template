@@ -28,23 +28,11 @@ def load_data_from_sqlite():
 
 # Function to create heatmap
 def create_correlation_heatmap(df):
-    # Select relevant columns for the heatmap
-    heatmap_columns = [
-        'Average Marriage Rate',
-        'Any Mental Illness 26+ (%)',
-        'Serious Mental Illness 26+ (%)',
-        'Received Mental Health Treatment 26+ (%)',
-        'Major Depressive Episode 26+ (%)',
-        'Thoughts of Suicide 26+ (%)',
-        'Made Any Suicide Plans 26+ (%)',
-        'Attempted Suicide 26+ (%)'
-    ]
-    
-    # Filter the dataframe for selected columns
-    heatmap_data = df[heatmap_columns].corr()
+    # Select all numeric columns for the heatmap
+    heatmap_data = df.select_dtypes(include=['float64', 'int64']).corr()
 
     # Plot the heatmap
-    plt.figure(figsize=(12, 8))
+    plt.figure(figsize=(14, 10))
     sns.heatmap(
         heatmap_data,
         annot=True,
@@ -53,7 +41,7 @@ def create_correlation_heatmap(df):
         center=0,
         linewidths=0.5
     )
-    plt.title('Correlation Heatmap (Average Marriage Rate vs Mental Health Metrics)', fontsize=16)
+    plt.title('Correlation Heatmap (All Factors)', fontsize=16)
     plt.xticks(rotation=45, ha='right', fontsize=10)
     plt.yticks(fontsize=10)
     plt.tight_layout()
@@ -61,9 +49,9 @@ def create_correlation_heatmap(df):
     # Save the heatmap as an image
     if not os.path.exists('maps'):
         os.makedirs('maps')
-    plt.savefig('maps/correlation_heatmap.png', dpi=300)
+    plt.savefig('maps/correlation_heatmap_all_factors.png', dpi=300)
     plt.close()
-
+    
 # Function to create choropleth maps
 def create_choropleth_maps(df):
     # Load and prepare state geometries
